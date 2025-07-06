@@ -1,0 +1,26 @@
+def calculate_cgpa():
+    total_courses = int(input("Enter the number of courses: "))
+    
+    total_credits = 0
+    total_grade_points = 0
+
+    print("\nEnter the details for each course:")
+    for i in range(total_courses):
+        print(f"\nCourse {i + 1}:")
+        grade = float(input("Enter grade (e.g., 8.5): "))
+        credit_hours = float(input("Enter credit hours (e.g., 3): "))
+
+        total_credits += credit_hours
+        total_grade_points += grade * credit_hours
+
+        print(f"Grade: {grade}, Credit Hours: {credit_hours}, Grade Points: {grade * credit_hours:.2f}")
+
+    if total_credits == 0:
+        print("\nNo credit hours entered. Cannot calculate CGPA.")
+        return
+
+    cgpa = total_grade_points / total_credits
+    print(f"\n✅ Final CGPA: {cgpa:.2f}")
+
+# Run the calculator
+calculate_cgpa()
